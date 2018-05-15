@@ -1,8 +1,8 @@
-FROM node
+FROM node: 8.9.1
 
-RUN npm install -g grunt-cli
+RUN npm install -g grunt-cli yarn
 
-RUN apt-get update && apt-get install -y ruby-dev gcc automake libtool rubygems build-essential && gem install sass
+RUN apt-get update && apt-get install -y ruby ruby-dev && gem install sass
 
 RUN apt-get clean autoclean && \
 	apt-get autoremove -y && \
